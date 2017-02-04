@@ -4,17 +4,17 @@ echo "Gabux > Convert"
 
 sudo apt-get install ffmpeg # install required library
 
-MODE = $1
-INPUT = $2
-OUTPUT = $3
+# $1 is the mode of the conversion.
+# $2 is the input file.
+# $3 is the output file.
 
-case "$MODE" in
+case "$1" in 
 "avi-to-mp4")
-    sudo ffmpeg -i $INPUT -vcodec mpeg4 -acodec ac3 -ar 48000 -ab 192k $OUTPUT
+    sudo ffmpeg -i $2 -vcodec mpeg4 -acodec ac3 -ar 48000 -ab 192k $3
 
     ;;
 "mkv-to-mp4")
-    sudo ffmpeg -i $INPUT -vcodec copy -acodec copy $OUTPUT
+    sudo ffmpeg -i $2 -vcodec copy -acodec copy $3
 
     ;;
 "3")

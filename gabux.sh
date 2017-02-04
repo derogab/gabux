@@ -2,9 +2,7 @@
 
 echo "Gabux started by $USER."
 
-COMMAND = $1
-
-case "$COMMAND" in
+case "$1" in # $1 is the command.
 "convert")
     sh commands/convert/convert.sh $2 $3 $4 #params: MODE, INPUT, OUTPUT
     ;;
@@ -19,4 +17,4 @@ case "$COMMAND" in
     ;;
 esac
 
-echo "End"
+echo "Bye :)"
