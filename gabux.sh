@@ -6,12 +6,12 @@ COMMAND = $1
 
 case "$COMMAND" in
 "convert")
-    MODE = $2
-    INPUT = $3
-    OUTPUT = $4
-    
+    sh commands/convert/convert.sh $2 $3 $4 #params: MODE, INPUT, OUTPUT
     ;;
-"2")
+"linux-update")
+    sh commands/update/update.sh
+    ;;
+"3")
     #something
     ;;
 *)
