@@ -23,7 +23,7 @@ echo "Temporary folders created."
 # Create custom command
 echo "Installing 'gabux' command.."
 sudo chmod +x /tmp/gabux/gabux.sh
-sudo cp /tmp/gabux/gabux.sh /usr/bin/gabux.sh
+sudo cp /tmp/gabux/gabux.sh /usr/bin/gabux
 echo "Custom command installed."
 
 # Clean garbage
