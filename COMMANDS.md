@@ -3,6 +3,7 @@ Gabux's commands
 
 <ul>
 <li><b>update</b> - Update Gabux.</li>
+<li><b>version</b> - Get current gabux version.</li>
 <li>
   <b>convert</b> - Convert files from IN to OUTPUT.
   <ul>
