@@ -1,23 +1,20 @@
 #! /bin/bash
 
-echo "Gabux > Help\n"
+echo "Gabux > Help"
 
-echo "How to use Gabux?\n"
+echo "How to use Gabux?"
 
 # Syntax
-echo "Syntax:
-\ngabux {COMMAND} {PARAMS}\n
-"
+echo "Syntax: gabux {COMMAND} {PARAMS}"
 
 # Print list of commands
 # Gabux commands
 echo "Gabux Commands:
 \n- help: get some helps.
 \n- version: get current gabux version.
-\n- update: update gabux to the last version.
-\n"
+\n- update: update gabux to the last version."
 # Other commands
 echo "Commands:
 \n- linux-update: update linux system.
 \n- convert: convert file; params: MODE INPUT OUTPUT.
-\n"
+\n- install: install software; params: NAME."
