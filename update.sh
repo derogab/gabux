@@ -40,4 +40,4 @@ if [ "$LAST" != "$CURRENT" ]; then
   echo "Gabux successfully updated."
 fi
 
-echo "Gabux is updated to the latest version: $CURRENT"
+echo "Gabux is updated to the latest version: $LAST"

@@ -1,15 +1,12 @@
 # Commands
+
 Gabux's commands
 
-<ul>
-<li><b>update</b> - Update Gabux.</li>
-<li><b>version</b> - Get current gabux version.</li>
-<li>
-  <b>convert</b> - Convert files from IN to OUTPUT.
-  <ul>
-    <li>avi-to-mp4</li>
-    <li>mkv-to-mp4</li>
-  </ul>
-</li>
-<li><b>linux-update</b> - Update the system.</li>
-</ul>
+- **update** - Update Gabux.
+- **version** - Get current gabux version.
+- **convert** - Convert files from IN to OUTPUT.
+
+  - avi-to-mp4
+  - mkv-to-mp4
+
+- **linux-update** - Update the system.
