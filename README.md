@@ -6,7 +6,9 @@ _A library to simplify bash commands in linux._
 Read all [commands](COMMANDS.md) you can use with gabux.
 
 ## How to install Gabux?
-`sudo sh install.sh`
+```
+sudo sh install.sh
+```
 
 --------------------------------------------------------------------------------
 
