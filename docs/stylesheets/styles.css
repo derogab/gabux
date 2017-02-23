@@ -269,3 +269,12 @@ footer {
     color:#444;
   }
 }
+
+# Customized by Gab
+h4.near{
+  margin-bottom: 8px;
+}
+li.disc{
+  list-style-type: circle;
+  padding-left: 20px;
+}
