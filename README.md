@@ -1,5 +1,7 @@
 # gabux
 
+[![Join the chat at https://gitter.im/derogab/gabux](https://badges.gitter.im/derogab/gabux.svg)](https://gitter.im/derogab/gabux?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 _A library to simplify bash commands in linux._
 
 ## Commands
