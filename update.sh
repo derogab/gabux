@@ -10,8 +10,7 @@ LAST=$(curl -s 'https://raw.githubusercontent.com/derogab/gabux/master/version.j
 CURRENT=$(jq -r '.version' /usr/share/gabux/version.json);
 
 echo "Checking last version of gabux..";
-if [ "$LAST" != "$CURRENT" ]; then
-  # Update Gabux
+if [ "$LAST" != "$CURRENT" ]; then # Update Gabux
 
   # Download gabux from github
   echo "Downloading last version of gabux..";
@@ -38,3 +37,4 @@ if [ "$LAST" != "$CURRENT" ]; then
 fi
 
 echo "Gabux is updated to the latest version: $LAST";
+exit;

@@ -5,7 +5,7 @@ case "$1" in # $1 is the command.
 "update") # update gabux
     bash /usr/share/gabux/update.sh;
     ;;
-"uninstall") # update gabux
+"uninstall") # uninstall gabux
     bash /usr/share/gabux/uninstall.sh;
     ;;
 *)
@@ -21,3 +21,4 @@ esac
 
 echo "Gabux executed your command.";
 echo "Bye $USER.";
+exit;

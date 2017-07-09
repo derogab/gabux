@@ -1,7 +1,7 @@
 #! /bin/bash
-echo "Converting.."
+echo "Converting..";
 
-dpkg -l | grep -qw ffmpeg || sudo apt-get install ffmpeg # install required library
+dpkg -l | grep -qw ffmpeg || sudo apt-get install ffmpeg; # install required library
 
 # $1 is the command 'convert'
 # $2 is the mode of the conversion.
@@ -10,11 +10,11 @@ dpkg -l | grep -qw ffmpeg || sudo apt-get install ffmpeg # install required libr
 
 case "$2" in
 "avi-to-mp4")
-    sudo ffmpeg -i $3 -vcodec mpeg4 -acodec ac3 -ar 48000 -ab 192k $4
+    sudo ffmpeg -i $3 -vcodec mpeg4 -acodec ac3 -ar 48000 -ab 192k $4;
 
     ;;
 "mkv-to-mp4")
-    sudo ffmpeg -i $3 -vcodec copy -acodec copy $4
+    sudo ffmpeg -i $3 -vcodec copy -acodec copy $4;
 
     ;;
 "3")
@@ -26,4 +26,5 @@ case "$2" in
     ;;
 esac
 
-echo "Conversion completed."
+echo "Conversion completed.";
+exit;
