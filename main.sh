@@ -17,4 +17,5 @@ case "$1" in # $1 is the command.
     ;;
 esac
 
-echo "Bye :)"
+echo "Gabux executed your command."
+echo "Bye $USER :)"

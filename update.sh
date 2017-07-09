@@ -3,9 +3,9 @@
 echo "Gabux > Update"
 
 # Dependencies
-sudo apt install curl # curl is required to verify version
-sudo apt install jq # jq is required to verify version
-sudo apt install git # git is required to download update file
+dpkg -l | grep -qw curl || sudo apt install curl # curl is required to verify version
+dpkg -l | grep -qw jq || sudo apt install jq # jq is required to verify version
+dpkg -l | grep -qw git || sudo apt install git # git is required to download update file
 
 # Control version.json
 LAST=$(curl -s 'https://raw.githubusercontent.com/derogab/gabux/master/version.json' | jq -r '.version')
@@ -15,7 +15,7 @@ if [ "$LAST" != "$CURRENT" ]; then
   # Update Gabux
 
   # Download gabux from github
-  echo "Download last version of gabux.."
+  echo "Downloading last version of gabux.."
   sudo git clone https://github.com/derogab/gabux /tmp/gabux
   echo "Source downloaded."
 
@@ -24,12 +24,10 @@ if [ "$LAST" != "$CURRENT" ]; then
   sudo rm -r /usr/share/gabux/commands
 
   # Copy folder in the system
-  echo "Installing sub-commands.."
   sudo cp -R /tmp/gabux /usr/share/
   echo "Sub-commands installed."
 
   # Create /bin
-  echo "Creating temporary folders.."
   sudo mkdir /usr/share/gabux/bin
   echo "Temporary folders created."
 

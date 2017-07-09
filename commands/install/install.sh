@@ -15,7 +15,7 @@ else
     # Setup file found
     # Install $2
     echo "Gabux > Install > $2"
-    sh /usr/share/gabux/commands/install/$2/$2.sh
+    bash /usr/share/gabux/commands/install/$2/$2.sh
   else
     # Setup file not found
     echo "Error: setup file not found. Read the list of available setup writing 'gabux help install'."

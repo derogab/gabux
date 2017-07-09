@@ -2,7 +2,7 @@
 
 echo "Gabux > Convert"
 
-sudo apt-get install ffmpeg # install required library
+dpkg -l | grep -qw ffmpeg || sudo apt-get install ffmpeg # install required library
 
 # $1 is the command 'convert'
 # $2 is the mode of the conversion.
@@ -27,4 +27,4 @@ case "$2" in
     ;;
 esac
 
-echo "Completed."
+echo "Conversion completed."
