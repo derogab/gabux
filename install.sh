@@ -3,7 +3,7 @@ echo "Gabux started by $USER."
 echo "Installing gabux.."
 
 # Git is required to install gabux
-dpkg -l | grep -qw git || sudo apt install git
+dpkg -l | grep -qw git || sudo apt-get install git
 
 # Download gabux from github
 echo "Downloading last version of gabux.."

@@ -1,9 +1,9 @@
 #! /bin/bash
 
 # Dependencies
-dpkg -l | grep -qw curl || sudo apt install curl # curl is required to verify version
-dpkg -l | grep -qw jq || sudo apt install jq # jq is required to verify version
-dpkg -l | grep -qw git || sudo apt install git # git is required to download update file
+dpkg -l | grep -qw curl || sudo apt-get install curl # curl is required to verify version
+dpkg -l | grep -qw jq || sudo apt-get install jq # jq is required to verify version
+dpkg -l | grep -qw git || sudo apt-get install git # git is required to download update file
 
 # Control version.json
 LAST=$(curl -s 'https://raw.githubusercontent.com/derogab/gabux/master/version.json' | jq -r '.version')

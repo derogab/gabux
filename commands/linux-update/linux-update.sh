@@ -5,8 +5,8 @@ if (( $updates == 0 )); then
     echo "No updates are available."
 else
     echo "There are updates available: $updates updates; $security_updates security updates."
-    sudo apt update;
-    sudo apt upgrade;
-    sudo apt autoremove;
+    sudo apt-get update;
+    sudo apt-get upgrade;
+    sudo apt-get autoremove;
 fi
 echo "The system is updated.";
