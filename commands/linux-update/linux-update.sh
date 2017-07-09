@@ -1,5 +1,5 @@
 #! /bin/bash
-echo "Gabux > Update"
+echo "Checking updates for your OS.."
 IFS=';' read updates security_updates < <(/usr/lib/update-notifier/apt-check 2>&1);
 if (( $updates == 0 )); then
     echo "No updates are available."

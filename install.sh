@@ -1,6 +1,6 @@
 #! /bin/bash
 echo "Gabux started by $USER."
-echo "Gabux > Install"
+echo "Installing gabux.."
 
 # Git is required to install gabux
 dpkg -l | grep -qw git || sudo apt install git

@@ -1,5 +1,4 @@
 #! /bin/bash
-
 echo "Gabux started by $USER."
 
 case "$1" in # $1 is the command.
@@ -18,4 +17,4 @@ case "$1" in # $1 is the command.
 esac
 
 echo "Gabux executed your command."
-echo "Bye $USER :)"
+echo "Bye $USER."

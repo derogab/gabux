@@ -1,7 +1,5 @@
 #! /bin/bash
 
-echo "Gabux > Update"
-
 # Dependencies
 dpkg -l | grep -qw curl || sudo apt install curl # curl is required to verify version
 dpkg -l | grep -qw jq || sudo apt install jq # jq is required to verify version
@@ -11,6 +9,7 @@ dpkg -l | grep -qw git || sudo apt install git # git is required to download upd
 LAST=$(curl -s 'https://raw.githubusercontent.com/derogab/gabux/master/version.json' | jq -r '.version')
 CURRENT=$(jq -r '.version' /usr/share/gabux/version.json)
 
+echo "Checking last version of gabux.."
 if [ "$LAST" != "$CURRENT" ]; then
   # Update Gabux
 

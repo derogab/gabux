@@ -1,7 +1,4 @@
 #! /bin/bash
-
-echo "Gabux > Help"
-
 echo "How to use Gabux?"
 
 # Syntax

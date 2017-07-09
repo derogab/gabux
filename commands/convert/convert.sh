@@ -1,6 +1,5 @@
 #! /bin/bash
-
-echo "Gabux > Convert"
+echo "Converting.."
 
 dpkg -l | grep -qw ffmpeg || sudo apt-get install ffmpeg # install required library
 

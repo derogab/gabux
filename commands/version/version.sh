@@ -1,6 +1,6 @@
 #! /bin/bash
 
-echo "Gabux > Version"
+echo "Checking version of gabux.."
 
 # Dependencies
 dpkg -l | grep -qw jq || sudo apt install jq # jq is required to verify version

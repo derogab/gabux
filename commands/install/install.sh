@@ -1,6 +1,5 @@
 #! /bin/bash
-
-echo "Gabux > Install"
+echo "Installing something.."
 
 # $1 is the command 'install'
 # $2 is the name of software I want install
