@@ -5,6 +5,9 @@ case "$1" in # $1 is the command.
 "update") # update gabux
     bash /usr/share/gabux/update.sh
     ;;
+"uninstall") # update gabux
+    bash /usr/share/gabux/uninstall.sh
+    ;;
 *)
     if [ -f "/usr/share/gabux/commands/$1/$1.sh" ]; then
       # File exists
