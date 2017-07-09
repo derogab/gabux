@@ -1,6 +1,4 @@
 #!/bin/bash
-echo "Installing bettercap..";
-
 # Source: https://www.bettercap.org
 
 # Install required source

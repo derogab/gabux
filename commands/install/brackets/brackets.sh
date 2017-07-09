@@ -1,6 +1,4 @@
 #!/bin/bash
-echo "Installing brackets..";
-
 # Source: http://brackets.io/
 
 # Add required repository
