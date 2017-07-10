@@ -1,5 +1,4 @@
-#! /bin/bash
-# start gabux.
-bash /usr/share/gabux/main.sh $@
-# custom command "gabux" started.
+#!/bin/bash
+# start gabux passing arguments
+/usr/share/gabux/gabux.py $@
 exit;
