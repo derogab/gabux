@@ -11,19 +11,19 @@ parser = optparse.OptionParser()
 
 # Powers
 def update(option, opt_str, value, parser, *args, **kwargs):
-    os.system('./update.py')
+    os.system('/usr/share/gabux/update.py')
     exit()
     pass
     # update()
 
 def install(option, opt_str, value, parser, *args, **kwargs):
-    os.system('./install.py')
+    os.system('/usr/share/gabux/install.py')
     exit()
     pass
     # install()
 
 def uninstall(option, opt_str, value, parser, *args, **kwargs):
-    os.system('./remove.py')
+    os.system('/usr/share/gabux/remove.py')
     exit()
     pass
     # uninstall()
@@ -31,7 +31,7 @@ def uninstall(option, opt_str, value, parser, *args, **kwargs):
 def launch(option, opt_str, value, parser, *args, **kwargs):
     print('Gabux started by '+getpass.getuser()+'.')
     arguments = ' '.join(parser.rargs)
-    os.system('./launch.py '+arguments)
+    os.system('/usr/share/gabux/launch.py '+arguments)
     exit()
     pass
     # command()
