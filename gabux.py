@@ -7,6 +7,7 @@ import optparse
 import sys
 import json
 import urllib2
+import git
 
 # Initialize
 parser = optparse.OptionParser()
@@ -31,7 +32,7 @@ def update(option, opt_str, value, parser, *args, **kwargs):
 
     # Control config.json
     print('Checking versions..')
-    with open('config.json') as local_data:
+    with open('/usr/share/gabux/config.json') as local_data:
         local_config = json.load(local_data)
     channel = local_config['channel']
     if channel == '':
@@ -121,6 +122,15 @@ def install(option, opt_str, value, parser, *args, **kwargs):
     out = os.popen('sudo mkdir /usr/share/gabux/bin').read()
     print('Temporary folders created.')
 
+    # Set channel version
+    with open('/usr/share/gabux/config.json') as local_data:
+        local_config = json.load(local_data)
+    repo = git.Repo('/usr/share/gabux/')
+    branch = repo.active_branch
+    local_config['channel'] = branch
+    with open('/usr/share/gabux/config.json', 'w') as outfile:
+        json.dump(local_config, outfile)
+
     # Create custom command
     out = os.popen('sudo chmod +x /usr/share/gabux/gabux.sh').read()
     out = os.popen('sudo cp /usr/share/gabux/gabux.sh /usr/bin/gabux').read()
@@ -131,6 +141,10 @@ def install(option, opt_str, value, parser, *args, **kwargs):
     if os.path.isdir('/tmp/gabux') == True:
         print('Clear tmp files..')
         out = os.popen('sudo rm -r /tmp/gabux').read()
+        pass
+    if os.path.isdir('/usr/share/gabux/.git') == True:
+        print('Clear git repository files..')
+        out = os.popen('sudo rm -r /usr/share/gabux/.git').read()
         pass
 
     print('Gabux successfully installed.')
