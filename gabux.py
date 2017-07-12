@@ -31,13 +31,16 @@ def update(option, opt_str, value, parser, *args, **kwargs):
 
     # Control config.json
     print('Checking versions..')
-    #url = "https://raw.githubusercontent.com/derogab/gabux/master/config.json"
-    url = "https://raw.githubusercontent.com/derogab/gabux/dev/config.json"
+    with open('config.json') as local_data:
+        local_config = json.load(local_data)
+    channel = local_config['channel']
+    if channel == '':
+        channel = 'master'
+        pass
+    url = 'https://raw.githubusercontent.com/derogab/gabux/'+channel+'/config.json'
     response = urllib2.urlopen(url)
     remote_data = response.read()
     remote_config = json.loads(remote_data)
-    with open('config.json') as local_data:
-        local_config = json.load(local_data)
 
     if remote_config['version'] != local_config['version']:
         print('Your version is Gabux '+local_config['version']
