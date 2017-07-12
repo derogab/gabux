@@ -141,18 +141,28 @@ def uninstall(option, opt_str, value, parser, *args, **kwargs):
     print('Gabux started by '+getpass.getuser()+'.')
     print('Removing gabux..')
 
-    # Remove gabux folder
-    if os.path.isdir('/usr/share/gabux') == True:
-        print('Deleting gabux folder..')
-        out = os.popen('sudo rm -r /usr/share/gabux').read()
+    if os.path.isdir('/usr/share/gabux') == False and os.path.isdir('/usr/bin/gabux') == False:
+
+        print('Gabux isn\'t installed.')
+
         pass
-    # Remove gabux bash command
-    if os.path.isdir('/usr/bin/gabux') == True:
-        print('Removing gabux bash command..')
-        out = os.popen('sudo rm -r /usr/bin/gabux').read()
+    else:
+
+        # Remove gabux folder
+        if os.path.isdir('/usr/share/gabux') == True:
+            print('Deleting gabux folder..')
+            out = os.popen('sudo rm -r /usr/share/gabux').read()
+            pass
+        # Remove gabux bash command
+        if os.path.isdir('/usr/bin/gabux') == True:
+            print('Removing gabux bash command..')
+            out = os.popen('sudo rm -r /usr/bin/gabux').read()
+            pass
+
+        print('Gabux successfully removed.')
+
         pass
 
-    print('Gabux successfully removed.')
     print('Today is a sad day.')
 
     exit()
