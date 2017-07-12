@@ -16,6 +16,15 @@ def update(option, opt_str, value, parser, *args, **kwargs):
 
     print('Gabux started by '+getpass.getuser()+'.')
 
+    if os.path.isdir('/usr/share/gabux') == False:
+
+        # Install Gabux now
+        print('No version installed. Gabux is going to be installed.')
+        install(option, opt_str, value, parser, *args, **kwargs)
+        exit()
+
+        pass
+
     # Get dependencies
     print('Downloading all requirements..')
     out = os.popen('sudo apt-get install git').read() # git is required to download update file
