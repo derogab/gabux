@@ -139,7 +139,6 @@ def install(option, opt_str, value, parser, *args, **kwargs):
 def uninstall(option, opt_str, value, parser, *args, **kwargs):
 
     print('Gabux started by '+getpass.getuser()+'.')
-    print('Removing gabux..')
 
     if os.path.isdir('/usr/share/gabux') == False and os.path.isdir('/usr/bin/gabux') == False:
 
@@ -148,6 +147,7 @@ def uninstall(option, opt_str, value, parser, *args, **kwargs):
         pass
     else:
 
+        print('Removing gabux..')
         # Remove gabux folder
         if os.path.isdir('/usr/share/gabux') == True:
             print('Deleting gabux folder..')
