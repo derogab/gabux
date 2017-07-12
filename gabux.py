@@ -20,7 +20,7 @@ def update(option, opt_str, value, parser, *args, **kwargs):
     print('Downloading all requirements..')
     out = os.popen('sudo apt-get install git').read() # git is required to download update file
 
-    # Control version.json
+    # Control config.json
     print('Checking versions..')
     #url = "https://raw.githubusercontent.com/derogab/gabux/master/config.json"
     url = "https://raw.githubusercontent.com/derogab/gabux/dev/config.json"
@@ -36,36 +36,16 @@ def update(option, opt_str, value, parser, *args, **kwargs):
         +'\nAn update is required. The update is about to start..'
         +'\nUpdating gabux..')
 
-        # Clear any old files
-        if os.path.isdir('/tmp/gabux') == True:
-            print('Clear old files..')
-            out = os.popen('sudo rm -r /tmp/gabux').read()
+        # Upgrade gabux to the last version
+        out = os.popen('sudo git -C /usr/share/gabux pull').read()
+
+        # Create temporary folder
+        if os.path.isdir('/usr/share/gabux/bin') == False:
+
+            out = os.popen('sudo mkdir /usr/share/gabux/bin').read()
+            print('Temporary folders created.')
+
             pass
-
-        # Download gabux from github
-        print('Downloading last version of gabux..')
-        out = os.popen('sudo git clone https://github.com/derogab/gabux.git /tmp/gabux').read()
-        print('Gabux source downloaded.');
-
-        # Remove old commands and bin
-        if os.path.isdir('/usr/share/gabux/bin') == True:
-            out = os.popen('sudo rm -r /usr/share/gabux/bin').read()
-            pass
-        if os.path.isdir('/usr/share/gabux/commands') == True:
-            out = os.popen('sudo rm -r /usr/share/gabux/commands').read()
-            pass
-
-        # Copy folder in the system
-        out = os.popen('sudo cp -R /tmp/gabux /usr/share/').read()
-        print('Sub-commands installed.')
-
-        # Create /bin
-        out = os.popen('sudo mkdir /usr/share/gabux/bin').read()
-        print('Temporary folders created.')
-
-        # Clean garbage
-        print('Almost done.')
-        out = os.popen('sudo rm -r /tmp/gabux').read()
 
         # End
         print('Gabux successfully updated.')
@@ -131,7 +111,7 @@ def install(option, opt_str, value, parser, *args, **kwargs):
 
     # Create custom command
     out = os.popen('sudo chmod +x /usr/share/gabux/gabux.sh').read()
-    out = os.popen('sudo mv /usr/share/gabux/gabux.sh /usr/bin/gabux').read()
+    out = os.popen('sudo cp /usr/share/gabux/gabux.sh /usr/bin/gabux').read()
     print('Gabux command installed.')
 
     # Clean garbage
