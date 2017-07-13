@@ -171,9 +171,9 @@ def uninstall(option, opt_str, value, parser, *args, **kwargs):
             out = os.popen('sudo rm -r /usr/share/gabux').read()
             pass
         # Remove gabux bash command
-        if os.path.isdir('/usr/bin/gabux') == True:
+        if os.path.exists('/usr/bin/gabux') == True:
             print('Removing gabux bash command..')
-            out = os.popen('sudo rm -r /usr/bin/gabux').read()
+            out = os.popen('sudo rm /usr/bin/gabux').read()
             pass
 
         print('Gabux successfully removed.')
