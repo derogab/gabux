@@ -1,6 +1,4 @@
 #!/bin/bash
-echo "Gabux started by $USER.";
-
 case "$1" in # $1 is the command.
 
 "help") # help info
@@ -12,16 +10,16 @@ case "$1" in # $1 is the command.
     # Print list of commands
     # Gabux commands
     echo "Gabux Commands:
-    \n- help: get some helps.
-    \n- version: get current gabux version.
-    \n- update: update gabux to the last version.";
+    - help: get some helps.
+    - version: get current gabux version.
+    - update: update gabux to the last version.";
     # OS commands
     echo "OS Commands:
-    \n- os update: update linux packages.
-    \n- os install {package}: install {package}.;"
+    - os update: update linux packages.
+    - os install {PACKAGE}: install {PACKAGE}."
     # Utils commands
     echo "Utils commands:
-    \n- utils convert: convert file; params: MODE INPUT OUTPUT.";
+    - utils convert {MODE} {INPUT} {OUTPUT}: convert file.";
     exit;
     ;;
 
