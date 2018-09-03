@@ -58,8 +58,8 @@ case "$1" in # $1 is the command.
     # Create /bin
     sudo mkdir /usr/share/gabux/bin;
     # Install gabux in the OS
-    sudo chmod +x /tmp/gabux/gabux.sh;
     sudo ln -sf /usr/share/gabux/gabux.sh /usr/bin/gabux;
+    sudo chmod +x /usr/bin/gabux;
     # Clean garbage
     sudo rm -r /tmp/gabux;
 
