@@ -16,7 +16,8 @@ case "$1" in # $1 is the command.
     # OS commands
     echo "OS Commands:
     - os update: update linux packages.
-    - os install {PACKAGE}: install {PACKAGE}."
+    - os install {PACKAGE}: install {PACKAGE}.
+    - os off {TIME}: shutdown the system after {TIME} seconds."
     # Utils commands
     echo "Utils commands:
     - utils convert {MODE} {INPUT} {OUTPUT}: convert file.";
@@ -87,6 +88,10 @@ case "$1" in # $1 is the command.
         ;;
     "install") # uninstall gabux
         bash /usr/share/gabux/scripts/os/install.sh $@;
+        exit;
+        ;;
+    "off") # power off the system
+        bash /usr/share/gabux/scripts/os/off.sh $@;
         exit;
         ;;
     esac

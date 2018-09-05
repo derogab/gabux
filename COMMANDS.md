@@ -2,15 +2,17 @@
 
 Gabux's commands
 
-- **update** - Update Gabux.
+- **help** - Get some helps.
 - **version** - Get current gabux version.
+- **update** - Update gabux to the last version.
 
-- **os update** - Update the system.
-- **os install** - Install software.
+- **os update** - Update linux packages.
+- **os install {PACKAGE}** - Install {PACKAGE}.
+- **os off {TIME}** - Shutdown the system after {TIME} seconds.
 
   - brackets
 
-- **utils convert** - Convert files from IN to OUTPUT.
+- **utils convert {MODE} {INPUT} {OUTPUT}** - Convert file.
 
   - avi-to-mp4
   - mkv-to-mp4
