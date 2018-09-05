@@ -45,24 +45,25 @@ case "$1" in # $1 is the command.
     CURRENT=$(jq -r '.version' /usr/share/gabux/version.json);
 
     echo "Checking last version of gabux..";
-    if [ "$LAST" != "$CURRENT" ]; then # Update Gabux
+    if test "$(printf '%s\n' "$CURRENT" "$LAST" | sort -V | head -n 1)" != "$LAST"; then # New gabux version
 
-    # Download gabux from github
-    echo "Downloading last version of gabux..";
-    sudo git clone https://github.com/derogab/gabux /tmp/gabux;
-    # Remove old version
-    sudo rm -r /usr/share/gabux;
-    # Copy folder in the OS
-    sudo cp -R /tmp/gabux /usr/share/;
-    # Create /bin
-    sudo mkdir /usr/share/gabux/bin;
-    # Install gabux in the OS
-    sudo ln -sf /usr/share/gabux/gabux.sh /usr/bin/gabux;
-    sudo chmod +x /usr/bin/gabux;
-    # Clean garbage
-    sudo rm -r /tmp/gabux;
+        # Download gabux from github
+        echo "Downloading last version of gabux..";
+        sudo git clone https://github.com/derogab/gabux /tmp/gabux;
+        # Remove old version
+        sudo rm -r /usr/share/gabux;
+        # Copy folder in the OS
+        sudo cp -R /tmp/gabux /usr/share/;
+        # Create /bin
+        sudo mkdir /usr/share/gabux/bin;
+        # Install gabux in the OS
+        sudo ln -sf /usr/share/gabux/gabux.sh /usr/bin/gabux;
+        sudo chmod +x /usr/bin/gabux;
+        # Clean garbage
+        sudo rm -r /tmp/gabux;
 
-    echo "Gabux successfully updated.";
+        echo "Gabux successfully updated.";
+        
     fi
 
     echo "Gabux is updated to the latest version: $LAST";
